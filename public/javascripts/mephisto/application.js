@@ -206,9 +206,9 @@ TinyTab.prototype = {
 Asset = {
   upload: function(form) {
     form = $(form);
-    article_id   = location.href.match(/\/(edit|upload)\/([0-9]+)/);
+    article_id   = location.href.match(/\/([0-9]+)\/(edit|upload)/);
     form.action  = Mephisto.root + "/admin/articles/upload"
-    if(article_id) form.action += "/" + article_id[2]
+    if(article_id) form.action += "/" + article_id[1]
     form.submit();
   },
   
